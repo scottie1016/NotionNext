@@ -35,12 +35,22 @@ const MyApp = ({ Component, pageProps }) => {
   useAdjustStyle()
 
   // --- 🤖 這裡插入 AI 氣泡程式碼 (開始) ---
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = "/ai-chat.js";
-    script.async = true;
-    document.body.appendChild(script);
-  }, []);
+  // --- 🤖 氣泡球 ---
+      useEffect(() => {
+        const script = document.createElement('script');
+        script.src = "/ai-chat.js"; // 您的氣泡球
+        // script.src = "/lock.js"; // 暫時把這行註解掉，想開鎖時再把這行打開
+        script.async = true;
+        document.body.appendChild(script);
+      }, []);
+
+      // --- 🔒 網站鎖 (新增這段) ---
+      useEffect(() => {
+        const script = document.createElement('script');
+        script.src = "/lock.js"; 
+        script.async = true;
+        document.body.appendChild(script);
+      }, []);
   // --- 🤖 這裡插入 AI 氣泡程式碼 (結束) ---
 
   const route = useRouter()
