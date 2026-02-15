@@ -1,5 +1,6 @@
 // import '@/styles/animate.css' // @see https://animate.style/
 import '@/styles/globals.css'
+import { useEffect } from 'react'
 import '@/styles/utility-patterns.css'
 
 // core styles shared by all of react-notion-x (required)
@@ -32,6 +33,15 @@ const ClerkProvider = dynamic(() =>
 const MyApp = ({ Component, pageProps }) => {
   // 一些可能出现 bug 的样式，可以统一放入该钩子进行调整
   useAdjustStyle()
+
+  // --- 🤖 這裡插入 AI 氣泡程式碼 (開始) ---
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "/ai-chat.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+  // --- 🤖 這裡插入 AI 氣泡程式碼 (結束) ---
 
   const route = useRouter()
   const theme = useMemo(() => {
