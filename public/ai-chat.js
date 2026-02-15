@@ -1,14 +1,20 @@
 (function() {
   // -----------------------------------------------------------
-  // 設定區：請將下方的網址換成您自己的 Hugging Face Space 網址
-  // 記得在網址最後面加上 /?embed=true 以隱藏標題列
-  // -----------------------------------------------------------
+  // 設定區
+  // 1. AI 機器人的網址
   var BOT_URL = "https://scottie1016-meimen-bot.hf.space/?embed=true";
+  
+  // 2. 您的 Icon 圖片網址 (請把引號內的網址換成您自己的)
+  var ICON_URL = "https://www.notion.so/image/attachment%3A465be1be-e59b-477d-9cbc-8038b3311354%3AIMG_3451.png"; 
+  // -----------------------------------------------------------
   
   // 建立按鈕 (Bubble)
   var btn = document.createElement("div");
-  btn.innerText = "🤖"; 
-  btn.style.cssText = "position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background: #000; color: #fff; border-radius: 50%; text-align: center; line-height: 60px; font-size: 30px; cursor: pointer; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.3s;";
+  // 設定預設為圖片
+  btn.innerHTML = '<img src="' + ICON_URL + '" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">';
+  
+  // 設定按鈕樣式 (拿掉原本的 text-align 和 line-height，因為圖片不需要)
+  btn.style.cssText = "position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background: #fff; border-radius: 50%; cursor: pointer; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.3s; display: flex; justify-content: center; align-items: center;";
   btn.onclick = toggleChat;
   
   // 建立聊天視窗 (Iframe Container)
@@ -31,11 +37,16 @@
     isOpen = !isOpen;
     if (isOpen) {
       box.style.display = "block";
-      btn.innerText = "✖"; // 變成關閉符號
+      // 打開時變成 "✖" (關閉符號)
+      btn.innerHTML = "✖"; 
+      btn.style.fontSize = "30px";
+      btn.style.color = "#333";
+      btn.style.background = "#fff"; // 保持白色背景
       btn.style.transform = "rotate(90deg)";
     } else {
       box.style.display = "none";
-      btn.innerText = "🤖"; // 變回機器人
+      // 關閉時變回您的圖片
+      btn.innerHTML = '<img src="' + ICON_URL + '" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">';
       btn.style.transform = "rotate(0deg)";
     }
   }
