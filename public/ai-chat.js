@@ -2,7 +2,7 @@
   // -----------------------------------------------------------
   // 設定區
   var BOT_URL = "https://scottie1016-meimen-bot.hf.space/?embed=true";
-  var ICON_URL = "https://cdn-icons-png.flaticon.com/512/4712/4712035.png"; // 您的頭像
+  var ICON_URL = "/Meimen_logo.PNG"; // 您的頭像
   // -----------------------------------------------------------
   
   // 1. 建立主按鈕 (Bubble)
