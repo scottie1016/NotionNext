@@ -5,7 +5,7 @@
   var BOT_URL = "https://scottie1016-meimen-bot.hf.space/?embed=true";
   
   // 2. 您的 Icon 圖片網址 (請把引號內的網址換成您自己的)
-  var ICON_URL = "https://www.notion.so/image/attachment%3A465be1be-e59b-477d-9cbc-8038b3311354%3AIMG_3451.png"; 
+  var ICON_URL = "https://www.notion.so/image/attachment%3A465be1be-e59b-477d-9cbc-8038b3311354%3AIMG_3451.png?table=collection&id=307b0ddc-0cbe-81a1-9fdd-000bc8a301b1&t=307b0ddc-0cbe-81a1-9fdd-000bc8a301b1"; 
   // -----------------------------------------------------------
   
   // 建立按鈕 (Bubble)
