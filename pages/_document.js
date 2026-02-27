@@ -68,6 +68,37 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <div id="ai-chat-widget">
+  <div id="ai-chat-window" style={{ position: 'fixed', bottom: '90px', right: '20px', width: '380px', height: '550px', maxWidth: '90vw', maxHeight: '80vh', background: '#ffffff', borderRadius: '16px', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', zIndex: 9998, display: 'none', overflow: 'hidden', border: '1px solid #eaeaea', transition: 'all 0.3s ease' }}>
+    <iframe src="https://scottie1016-meimen-bot.hf.space/" style={{ width: '100%', height: '100%', border: 'none' }} />
+  </div>
+  <button id="ai-chat-fab" style={{ position: 'fixed', bottom: '20px', right: '20px', width: '60px', height: '60px', borderRadius: '50%', backgroundColor: '#2D3748', color: 'white', border: 'none', fontSize: '28px', cursor: 'pointer', boxShadow: '0 4px 12px rgba(0,0,0,0.2)', zIndex: 9999, display: 'flex', justifyContent: 'center', alignItems: 'center', transition: 'transform 0.2s' }}>
+    💬
+  </button>
+</div>
+<script dangerouslySetInnerHTML={{ __html: `
+  document.addEventListener('DOMContentLoaded', function() {
+    var fab = document.getElementById('ai-chat-fab');
+    var chatWindow = document.getElementById('ai-chat-window');
+    var isOpen = false;
+    if(fab) {
+      fab.addEventListener('click', function() {
+        isOpen = !isOpen;
+        if (isOpen) {
+          chatWindow.style.display = 'block';
+          fab.innerHTML = '✖';
+          fab.style.backgroundColor = '#E53E3E';
+          fab.style.transform = 'scale(0.9)';
+        } else {
+          chatWindow.style.display = 'none';
+          fab.innerHTML = '💬';
+          fab.style.backgroundColor = '#2D3748';
+          fab.style.transform = 'scale(1)';
+        }
+      });
+    }
+  });
+` }} />
         </body>
       </Html>
     )
