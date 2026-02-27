@@ -2,7 +2,7 @@
 import BLOG from '@/blog.config'
 import Document, { Head, Html, Main, NextScript } from 'next/document'
 
-// 预先设置深色模式的脚本内容
+// 预先设置深色模式的脚本内容 
 const darkModeScript = `
 (function() {
   const darkMode = localStorage.getItem('darkMode')
